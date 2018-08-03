@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<!-- $header -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    
+    
+    <!-- For iOS devices to hide URL and Status Bar -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    
+    <!-- For iOS devices to add app icon and start pic to home screen -->
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" />
+    <link rel="apple-touch-startup-image" href="/startup.png">
+    
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->    
+    
+    <!-- jQuery 1.7.1 version -->
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    
+    <!-- jQuery validate plug in version 1.9 -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+    
+    <!-- jQuery cookie plug in -->
+	<script src="js/jquery.cookie.js"></script>
+
+    <!-- Path Configuration script -->
+	<script src="js/config.js"></script>
+
+
+	<!-- Bootstrap UI framework resource version 2.0.2 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css"> 
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css"> 
+    <script src="bootstrap/js/bootstrap.min.js"></script>  
+    <!-- typeahead plug in -->
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script> 
+
+    <!-- FortAwesome vector icon resource 
+    <link rel="stylesheet" href="FortAwesome/css/font-awesome.css">-->
+
+    <!--=======================================
+        Load Rolling Melon resouce
+    ===========================================-->
+    <link rel="stylesheet" href="css/rollingmelon.css">
+    <script src="js/rollingmelon.js"></script>
+    
+  <style type="text/css">
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+    body {
+      -webkit-transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      -webkit-transform-style: preserve-3d;
+      background-color: transparent;
+    }
+    .gwd-img-t845 {
+      position: absolute;
+      left: 3.28571428571445px;
+      top: 2.85714285714289px;
+      width: 1500px;
+      height: 845px;
+      z-index: -1;
+    }
+    .motd {
+      position: absolute;
+      left: 20px;
+      top: 200px;
+    }
+  </style>
+   
+</head>
+
+<body>
+
+
+<!--=======================================
+	Login Page Start 
+===========================================-->
+<div id="loginPage">
+  <!-- <img src="image/LogInPrimaryPanic.jpg" class="gwd-img-t845"> -->
+
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <div>&nbsp;</div>    
+    <!-- login content    start -->
+    <div id="loginPageElements" class="rm-alignCenter">   
+        <h3 id="loginNotification"></h3>
+        <form id="loginForm">
+        
+            <input type="text" id="loginEmail" name="loginEmail" class="rm-inputStyle" placeholder="E-Mail"/>
+            <div id="loginEmailError"></div> <br>
+            
+            
+            <input type="text" id="loginPassword" name="loginPassword" class="rm-inputStyle" placeholder="Password"/>
+            <div id="loginPasswordError"></div> <br>
+
+			<input type="hidden" name="version" value="1" />            
+            
+            &nbsp; &nbsp; &nbsp; &nbsp;
+            <button id="login" type="submit" class=" btn-large btn-primary rm-wideBtn">Login</button> <br><br><br>
+			
+            <h4 id="gotoRegisterPage" onClick="ChangePage($('#loginPageElements'),$('#registerPageElements'));">
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<a style="cursor:pointer; text-decoration:underline">Register</a></h4> <br>
+            
+            <h4 id="loginNotification" onClick="ChangePage($('#loginPageElements'),$('#fetchPasswordPageElements'));">
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<a style="cursor:pointer; text-decoration:underline">Forgot password</a></h4>
+        </form>          	
+    </div> 
+    <!-- login content    end -->
+    
+    
+    
+    <!-- register content    start -->
+    <div id="registerPageElements" class="rm-alignCenter hide">   
+        <h3 id="registerNotification"></h3>
+        <form id="registerForm">
+        
+	    <div id="registerInstructions" style="width: 280px" >
+              <p>A password will be generated and sent to you after you register.</p>
+	      <p>Please use that password to login in the future.</p>
+	      <p>The user name you entered will be used to display on the leader board.</p>
+	    </div>
+            
+            <input type="text" id="nickName" name="nickName" class="rm-inputStyle" placeholder="User Name"/>
+            <div id="nickNameError"></div> <br>
+        
+            <input type="text" id="registerEmail" name="registerEmail" class="rm-inputStyle" placeholder="E-Mail"/>
+            <div id="registerEmailError"></div> <br>
+
+	    <div style="width: 250px; margin-left:44px" >
+
+            <button style="margin-top: 33px" id="register" type="submit" class=" btn-large btn-primary rm-wideBtn">Register</button> <br><br>
+	    </div>
+            
+        </form>          	
+	<button style="margin-top: 33px; margin-left:44px" class=" btn-large btn-primary rm-wideBtn" onClick="location.reload();">back to login </button> <br><br>
+    </div>    
+    <!-- register content    end -->    
+
+
+
+    <!-- fetch password content    start -->
+    <div id="fetchPasswordPageElements" class="rm-alignCenter hide">   
+        <h3 id="fetchPasswordNotification"></h3>
+        <form id="fetchPasswordForm">
+  
+            <input type="text" id="fetchPasswordEmail" name="fetchPasswordEmail" class="rm-inputStyle" placeholder="Enter registeration email"/>
+            <div id="fetchPasswordEmailError"></div> <br>  
+                      
+            <button id="fetchPassword" type="submit" class=" btn-large btn-primary rm-wideBtn">Reset Password</button> <br><br>
+            
+            <h4 id="gotoLoginPage2" onClick="location.reload();"><a>back to login</a></h4> <br>
+			
+        </form>          	
+    </div> 
+    <!-- Message of the Day -->    
+
+    <div class="motd">
+            <object width="500" height="150" data="motd.html"><object>
+    </div>
+    
+</div>
+<!--=======================================
+	Login Page End
+===========================================-->
